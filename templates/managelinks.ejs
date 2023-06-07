@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../mainConfig.css">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../footer.css">
+    <link rel="stylesheet" href="../manage-links.css">
+    <title>Gerenciador de Links</title>
+</head>
+<body class="manage-body">
+
+<header class="header">
+    <div class="content-header">
+        <a href="/"><h1 class="main-title">Gerenciador de Links</h1></a>
+    <nav>
+        <a href="/" class="menu-link">Home</a>
+        <a href="/addlink" class="menu-link">Adicionar Novo Link</a>
+    </nav>
+    </div>
+</header>
+
+
+<div class="content-links">
+    <h3 class="subtitle">Gerenciador de Links</h3>
+
+    <%for(item of links){%>
+
+        <%if(item){%>
+
+        <div class="link-box" id="<%=item._id%>">
+            <h4 class="link-item title">Título: <span class="link-title"> <%=item.titulo%> </span> </h4>
+            <h4 class="link-item url">URL: <span class="link-url"><%=item.url%></span> </h4>
+            <h4 class="link-item click">Clicks: <span class="link-clicks"><%=item.click%></span></h4>
+            <a class="button-link edit" href="/editlink/<%=item._id%>">Editar</a>
+            <button class="button-link delete" onclick="deletarItem('<%=item._id%>')">Deletar</button>
+        </div>
+
+        <%}%>
+    <%}%>
+</div>
+
+
+<footer>Rodape</footer>
+
+<script>
+    async function deletarItem(item){
+        fetch('/managelinks/' + item, {method: 'DELETE'})
+            .then(httpRes =>{return httpRes.json()})
+                .then(dataRes => {
+                    let element = document.getElementById(dataRes)  
+                    element.remove()
+            })
+
+    }
+
+</script>
+</body>
+</html>

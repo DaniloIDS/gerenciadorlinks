@@ -1,0 +1,47 @@
+.content{
+    align-self: center;
+    flex-grow: 2;
+    min-width: 90%;
+    padding-top: 5rem;
+
+}
+
+.formAdd{
+    display: flex;
+    flex-direction: column;
+    padding: 5rem;
+}
+
+.field{
+    width: 300px;
+    min-width: 60%;
+    align-self: center;
+    margin: 0.5rem 0;
+    padding: 1rem 0.5rem;
+    border-radius: 10px;
+    box-shadow: 4px 4px 1px #0000005c;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.field::placeholder{
+    text-align: center;
+}
+
+.button{
+    background-color: var(--detail);
+    font-weight: 900;
+    cursor: pointer;
+}
+
+.box-info{
+    max-width: 50%;
+    text-align: center;
+    line-height: 1.5;
+    margin: 2rem auto;
+}
+
+h3{
+    font-weight: normal;
+}
+

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../mainConfig.css">
+    <link rel="stylesheet" href="../header.css">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../footer.css">
+    <title>Gerenciador de Links - Adicionar Link</title>
+</head>
+<body onload="focusInTitle()">
+
+<header class="header">
+    <div class="content-header">
+        <a href="/"><h1 class="main-title">Gerenciador de Links</h1></a>
+    <nav>
+        <a href="/" class="menu-link">Home</a>
+        <a href="/managelinks" class="menu-link">Gerenciar Links</a>
+    </nav>
+    </div>
+</header>
+
+<main class="content">
+    <h2 class="subtitle">ADICIONAR LINK</h2>
+    <form action="/addlink" class="formAdd" method="POST" onsubmit="fieldsValidation()">
+        <input class="field" placeholder="Inserir Título" type="text" name="titulo" id="tituloInput" required>
+        <input class="field" placeholder="Inserir URL com 'https://' " type="text" name="url" id="urlInput" required>
+        <input class="field button" type="submit" value="SALVAR LINK">
+    </form>
+
+</main>
+
+<footer>Rodape</footer>
+
+<script>
+    function focusInTitle(){
+        let element = document.getElementById('tituloInput')
+        element.focus()
+    }
+
+    function fieldsValidation(){
+        let titulo = document.getElementById('tituloInput').value
+        let url = document.getElementById('urlInput').value
+
+        if(titulo == '' || url == ''){
+            alert('Preencha todos os campos corretamente!')
+        }
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Arvo:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+:root{
+    --textBlack: #000000;
+    --textWhite: #e7edea;
+    --subtitle: #505050;
+    --bg: #ceecef;
+    --mainColor: #030d4f;
+    --secondColor: #fb0c06;
+    --detail: #ffc52c;
+}
+
+body{
+    background-color: var(--bg);
+    font-family: 'Arvo', Helvetica, sans-serif;
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+}
+
+.subtitle{
+    text-align: center;
+    color: var(--subtitle);
+    font-size: 2rem;
+    margin: 2rem 0;
+}
