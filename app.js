@@ -6,7 +6,6 @@ const path = require('path')
 const app = express()
 const PORT = process.env.PORT
 const linkConnectionDB = process.env.URL_DB
-const nameDatabase = process.env.NAME_DB
 
 app.set('views', path.join(__dirname, 'templates'))
 app.set('view engine', 'ejs')
@@ -17,7 +16,7 @@ app.use('/', router)
 
 app.listen(PORT, ()=>{console.log(`Server running in port ${PORT}`)})
 
-mongoose.connect(linkConnectionDB + nameDatabase)
+mongoose.connect(linkConnectionDB)
 
 const db = mongoose.connection
 
